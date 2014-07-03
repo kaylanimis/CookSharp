@@ -100,6 +100,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Prism\BootStrapper.cs" />
+    <Compile Include="Prism\LoggingFacade.cs" />
     <Compile Include="Prism\WindsorBootstrapper.cs" />
     <Compile Include="Installer.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -133,7 +134,9 @@
     <AppDesigner Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
