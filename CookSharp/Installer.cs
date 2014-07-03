@@ -8,9 +8,7 @@ namespace CookSharp
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(
-                Component.For<IShell>().ImplementedBy<Shell>().LifestyleTransient(),
-                Component.For<MainWindow>().LifestyleTransient());
+            container.Register(Component.For<MainWindow>().LifeStyle.Transient);
         }
     }
 }

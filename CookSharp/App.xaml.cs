@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using Castle.Windsor;
+using CookSharp.Prism;
 
 namespace CookSharp
 {
@@ -21,9 +22,8 @@ namespace CookSharp
             container = new WindsorContainer();
             container.Install(new Installer());
 
-            var shell = container.Resolve<IShell>();
-            shell.Run();
-            container.Release(shell);
+            var bootstrapper = new BootStrapper(new Installer());
+            bootstrapper.Run();
         }
     }
 }
