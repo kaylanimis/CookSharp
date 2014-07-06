@@ -2,6 +2,7 @@
 using System.Windows;
 using Castle.MicroKernel.Registration;
 using Microsoft.Practices.Prism.Logging;
+using PrismContrib.WindsorExtensions;
 
 namespace CookSharp.Prism
 {
@@ -16,7 +17,7 @@ namespace CookSharp.Prism
 
         protected override DependencyObject CreateShell()
         {
-            return Container.Resolve<MainWindow>();
+            return Container.Resolve<Shell>();
         }
 
         protected override ILoggerFacade CreateLogger()
